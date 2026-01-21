@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
 3:I[42949,["/_next/static/chunks/13dd16a01ea8a5d0.js","/_next/static/chunks/1f26ce154ba26398.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"lXHc0iF2wYRzaHNMCYLLZ","rsc":["$","$1","c",{"children":["$L2",[["$","script","script-0",{"src":"/_next/static/chunks/7f660441bf5b1efa.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"AOe4-nenqenJuz46bOdLL","rsc":["$","$1","c",{"children":["$L2",[["$","script","script-0",{"src":"/_next/static/chunks/7f660441bf5b1efa.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
 2:E{"digest":"NEXT_REDIRECT;replace;/en/campaign/trade-gold-with-adss;307;"}
