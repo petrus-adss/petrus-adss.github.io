@@ -1,0 +1,5 @@
+:HL["/_next/static/chunks/9d1e799c03b3d278.css","style"]
+:HL["https://www.adss.com/wp-content/themes/eprefix-bootstrap/fonts/Janna-Graphie-Light.woff2","font",{"crossOrigin":"anonymous"}]
+:HL["https://www.adss.com/wp-content/themes/eprefix-bootstrap/fonts/Janna-Graphie-Light.woff","font",{"crossOrigin":"anonymous"}]
+:HL["https://www.adss.com/wp-content/themes/eprefix-bootstrap/fonts/Janna-Graphie-Regular.woff2","font",{"crossOrigin":"anonymous"}]
+0:{"buildId":"lXHc0iF2wYRzaHNMCYLLZ","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

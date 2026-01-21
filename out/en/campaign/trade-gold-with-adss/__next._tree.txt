@@ -1,0 +1,8 @@
+:HL["/_next/static/chunks/9d1e799c03b3d278.css","style"]
+:HL["https://www.adss.com/wp-content/themes/eprefix-bootstrap/fonts/Janna-Graphie-Light.woff2","font",{"crossOrigin":"anonymous"}]
+:HL["https://www.adss.com/wp-content/themes/eprefix-bootstrap/fonts/Janna-Graphie-Light.woff","font",{"crossOrigin":"anonymous"}]
+:HL["https://www.adss.com/wp-content/themes/eprefix-bootstrap/fonts/Janna-Graphie-Regular.woff2","font",{"crossOrigin":"anonymous"}]
+:HL["https://www.adss.com/wp-content/uploads/2025/08/Gold-Fixed-Spreads-Header-Elements-03B-1024x474.webp","image",{"fetchPriority":"high"}]
+:HL["https://www.adss.com/wp-content/uploads/2025/08/Gold-Fixed-Spreads-Header-Elements-02A.webp","image",{"fetchPriority":"high"}]
+:HL["https://www.adss.com/wp-content/uploads/2023/07/free_demo_account.png","image"]
+0:{"buildId":"lXHc0iF2wYRzaHNMCYLLZ","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"locale","paramType":"d","paramKey":"en","hasRuntimePrefetch":false,"slots":{"children":{"name":"campaign","paramType":null,"paramKey":"campaign","hasRuntimePrefetch":false,"slots":{"children":{"name":"trade-gold-with-adss","paramType":null,"paramKey":"trade-gold-with-adss","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
