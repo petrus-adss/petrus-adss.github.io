@@ -1,0 +1,672 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Remote font files */
+@font-face {
+  font-family: "Janna Graphie";
+  src: url("/fonts/Janna-Graphie-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Janna Graphie";
+  src: url("/fonts/Janna-Graphie-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Local fallbacks */
+@font-face {
+  font-family: "Janna-Graphie";
+  src: local("Janna-Graphie Light"), local("Janna-Graphie-Light"), url("/fonts/Janna-Graphie-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Janna-Graphie";
+  src: local("Janna-Graphie Regular"), local("Janna-Graphie-Regular"), url("/fonts/Janna-Graphie-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --font-sans: "Janna Graphie", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", "Courier New", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Adding responsive root font-size to match the real site's rem calculations */
+@media (min-width: 768px) {
+  html {
+    font-size: 11px;
+  }
+
+  .sm-txt {
+    font-size: 0.81rem;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+
+  .sm-txt {
+    font-size: 0.83rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+
+  .sm-txt {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 18px;
+  }
+
+  .sm-txt {
+    font-size: 0.9rem;
+  }
+}
+
+/* Adding global heading typography styles from original ADSS site */
+/* Text styles */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 2.8rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h4 {
+  color: #101010;
+  font-family: Janna-Graphie;
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 2rem;
+  letter-spacing: -0.0325rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.4rem;
+    line-height: 3.75rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    line-height: 2.68rem;
+  }
+
+  h3 {
+    font-size: 1.85rem;
+    line-height: 2.5rem;
+  }
+}
+
+.sm-txt {
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+strong {
+  font-family: "Janna-Graphie";
+  font-weight: normal;
+  font-style: normal;
+}
+/* Text styles */
+
+/* Light menu */
+.light_menu.menu_holder,
+.light_menu.submenu {
+  background-color: #fff;
+}
+
+.light_menu .menu li a {
+  color: #000;
+}
+
+.light_menu .menu li.current_page_item a {
+  color: #00b570;
+}
+
+.light_menu .sub_menu_items li a {
+  color: #636366;
+}
+
+.light_menu .menu li a:hover,
+.light_menu .sub_menu_items li a:hover {
+  color: #00b570;
+}
+
+.light_menu .start_btn {
+  background-color: #000;
+}
+
+.light_menu .start_btn:hover {
+  color: #00b570;
+}
+
+.light_menu .logo_colour {
+  fill: #000;
+}
+
+/* Dark menu */
+.dark_menu.menu_holder,
+.dark_menu.submenu {
+  background-color: #0d1821;
+}
+
+.dark_menu .menu li a {
+  color: #fff;
+}
+
+.dark_menu .menu li.current_page_item a {
+  color: #00b570;
+}
+
+.dark_menu .sub_menu_items li a {
+  color: #a7abab;
+}
+
+.dark_menu .menu li a:hover,
+.dark_menu .sub_menu_items li a:hover {
+  color: #00b570;
+}
+
+.dark_menu .start_btn {
+  background-color: #262f37;
+}
+
+.dark_menu .start_btn:hover {
+  color: #00b570;
+}
+
+.dark_menu .logo_colour {
+  fill: #fff;
+}
+
+/* Utility helpers */
+.janna_lt {
+  font-family: "Janna-Graphie";
+  font-weight: 300;
+  font-style: normal;
+}
+
+.janna_rg {
+  font-family: "Janna-Graphie";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rounded-pill {
+  border-radius: 50rem !important;
+}
+
+.cta_btn {
+  padding: 0.4rem 1.2rem;
+  background-color: #00ff00;
+  color: #0d1821;
+  font-size: 0.8rem;
+  transition: 300ms;
+  white-space: nowrap;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .cta_btn {
+    padding: 0.4rem 1.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1340px;
+  }
+}
+
+.benefit-icon {
+  display: block;
+  width: auto;
+  height: 64px;
+  margin-left: 0;
+  margin-bottom: -10px;
+}
+
+@media (min-width: 768px) {
+  .benefit-icon {
+    height: 44px;
+  }
+}
+
+@media (min-width: 992px) {
+  .benefit-icon {
+    height: 56px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .benefit-icon {
+    height: 64px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .benefit-icon {
+    height: 72px;
+  }
+}
+
+.faq-section {
+  background-color: #0d1821;
+}
+
+.faq-anchor {
+  position: absolute;
+  inset: 0;
+  top: -18rem;
+  height: 0;
+}
+
+.faq-accordion-holder {
+  border: 1px solid #d8d8d8;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: transparent;
+  color: #ffffff;
+}
+
+.faq-accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-accordion-question h5 {
+  margin: 0;
+  font-size: 1.125rem;
+  color: #ffffff;
+}
+
+.faq-accordion-toggle {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #14202b;
+  color: #ffffff;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-accordion-content {
+  display: none;
+  margin-top: 1.5rem;
+  color: #ffffff;
+}
+
+.faq-accordion-content p {
+  margin: 0;
+  color: #ffffff;
+}
+
+.faq-accordion-holder.active .faq-accordion-question h5 {
+  color: #00b570;
+}
+
+.faq-accordion-holder.active .faq-accordion-toggle {
+  background-color: #00b570;
+  color: #ffffff;
+  transform: rotate(180deg);
+}
+
+.faq-accordion-holder.active .faq-accordion-content {
+  display: block;
+}
+
+.faq-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.faq-pagination button {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-pagination button:hover,
+.faq-pagination button.active {
+  background-color: #00b570;
+  border-color: #00b570;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .faq-accordion-question h5 {
+    font-size: 1rem;
+  }
+  .faq-accordion-holder {
+    padding: 1.25rem;
+  }
+}
+
+.footerholder {
+  background-color: #0d1821;
+  font-size: 0.9rem;
+  color: #818181;
+}
+
+.footerholder a {
+  color: #818181;
+}
+
+.footerholder hr {
+  border-color: #636366 !important;
+}
+
+.footerholder .social {
+  width: 1.8rem;
+  margin-right: 0.3rem;
+}
+
+@media (min-width: 768px) {
+  .footerholder .social {
+    width: 1.3rem;
+    margin-right: 0.2rem;
+  }
+}
+
+.footerholder .social:hover {
+  opacity: 0.8;
+}
+
+.promo_banner36 .header-head-lozenge {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  border: 1px solid #f5f5f5;
+}
+.promo_banner a {
+  min-width: 10rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 2rem;
+}
+.promo_banner36 .link1 {
+  color: #00b570;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.condensed-benefits-section {
+  position: relative;
+}
+
+.condensed-benefits-divider {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  opacity: 0.27;
+}
+
+.condensed-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .condensed-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .condensed-benefits-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.condensed-benefit-card {
+  border: 0.5px solid #00ff00;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  background: transparent;
+  min-height: 100%;
+}
+
+.condensed-benefit-card h5 {
+  font-size: 1.125rem;
+}
+
+.condensed-benefit-card p {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 767px) {
+  .condensed-benefit-card h5 {
+    font-size: 0.95rem;
+  }
+  .condensed-benefit-card p {
+    font-size: 0.875rem;
+  }
+}
